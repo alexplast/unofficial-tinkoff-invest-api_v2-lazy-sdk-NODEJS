@@ -74,7 +74,7 @@ module.exports = function (opt){
             } else {
               let pathDir = name.split('/');
               let filename = pathDir[pathDir.length - 1];
-              let [protoName, ext] = filename.split('.');
+              let [protoName, ext] = name.split('.');
               if(protoName.length > 0){
                 files_.push(protoName);                
               }
@@ -93,7 +93,7 @@ module.exports = function (opt){
   this.loadProto = function(){
     for(let pn of this.protoNames){
       this.packageDefinition[pn] = protoLoader.loadSync(
-        this.protoDir + pn + '.proto',
+        pn + '.proto',
         {
          keepCase: true,
          longs: Number,
@@ -112,7 +112,7 @@ module.exports = function (opt){
 
   this.loadContracts = function(){
     for(pn of this.protoNames){
-      this.contracts[pn] = this.protoDescriptor[pn].tinkoff.public.invest.api.contract.v1;
+      this.contracts[pn] = this.protoDescriptor[pn].tinkoff?.public.invest.api.contract.v1 ?? {};
 
       this.log('try to loadContracts['+pn+']');
       this.log(this.contracts[pn]);
