@@ -2,7 +2,7 @@
 //Licensed under the Apache License, Version 2.0
 
 var grpc        = require('@grpc/grpc-js');
-var copy        = require('fast-copy');
+var copy        = require('fast-copy').default;
 var protoLoader = require('@grpc/proto-loader');
 var fs          = require('fs');
 var path        = require('path');
