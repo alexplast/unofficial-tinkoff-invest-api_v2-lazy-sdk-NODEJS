@@ -4,7 +4,8 @@
   "description": "",
   "main": "tinkoff.v2.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update": "git submodule update --remote --merge"
   },
   "author": "",
   "license": "ISC",
