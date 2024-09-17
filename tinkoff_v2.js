@@ -254,7 +254,18 @@ module.exports = function (opt){
         }
         continue;
       }
-
+      
+      if (rules[fieldName] == 'QuotationString'){
+        if (Array.isArray(resp[fieldName])){
+          for (let i in resp[fieldName]){
+            resp[fieldName][i] = this.quotation2decimalString(resp[fieldName][i]);
+          }
+        }else{
+          resp[fieldName] = this.quotation2decimalString(resp[fieldName]);
+        }
+        continue;
+      }
+      
       if (rules[fieldName] == 'MoneyValue'){
         if (Array.isArray(resp[fieldName])){
           for (let i in resp[fieldName]){
@@ -314,6 +325,13 @@ module.exports = function (opt){
     }
     return obj.units + obj.nano/1000000000;
   }
+
+  this.quotation2decimalString = function (obj) {
+    if (obj == null) {
+      return null;
+    }
+    return String(+(obj.units + obj.nano / 1000000000).toFixed(9));
+  };
 
   this.decimal2quotation = function (dec){
     if (dec == null){
