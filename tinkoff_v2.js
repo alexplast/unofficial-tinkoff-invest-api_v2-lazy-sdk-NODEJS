@@ -8,6 +8,7 @@ var fs          = require('fs');
 var path        = require('path');
 
 module.exports = function (opt){
+  this.isDebug  = false;
   if (opt === undefined){
     throw 'Не переданы настройки';
   }
@@ -33,7 +34,6 @@ module.exports = function (opt){
     this.appName = 'lazy-nodejs'
   }
 
-  this.isDebug  = false;
   this.url      = 'invest-public-api.tinkoff.ru:443';
   this.protoDir = __dirname + '/investAPI/src/docs/contracts/';
 
