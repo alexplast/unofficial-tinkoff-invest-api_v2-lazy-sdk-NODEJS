@@ -53,6 +53,8 @@ var api = new tinkoff_v2({
 	    'grpc.keepalive_timeout_ms' : 30000,
 	    'grpc.min_reconnect_backoff_ms': 1000,
 	    'grpc.max_reconnect_backoff_ms': 10000,
+            'grpc.max_receive_message_length': 1024 * 1024 * 50, 
+            'grpc.max_send_message_length': 1024 * 1024 * 50 
 	}
 });
 
