@@ -5,7 +5,7 @@
   "main": "tinkoff.v2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "update": "git submodule update --remote --merge --init --recursive"
+    "postinstall": "git submodule update --remote --merge --init --recursive"
   },
   "author": "",
   "license": "ISC",
