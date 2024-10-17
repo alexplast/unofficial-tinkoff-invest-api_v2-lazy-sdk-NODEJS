@@ -1,11 +1,11 @@
 {
   "name": "tinkoff-invest_v2_sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "tinkoff.v2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "git submodule update --remote --merge --init --recursive"
+    "preinstall": "git submodule update --remote --merge --init --recursive"
   },
   "author": "",
   "license": "ISC",
