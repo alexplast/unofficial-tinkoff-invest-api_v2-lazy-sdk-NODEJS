@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@grpc/grpc-js": "^1.12.2",
+    "@grpc/grpc-js": "^1.13.0",
     "fast-copy": "^3.0.2",
     "grpc-promise": "^1.4.0"
   }
